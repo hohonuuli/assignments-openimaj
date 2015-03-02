@@ -14,7 +14,15 @@ import scilube.Matlib
 object SupportFunctions {
 
   /**
-   * Create a function that generates salt and pepper noise at the given probability
+   * Create a function that generates salt and pepper noise at the given probability. The
+   * usage is: {{{
+   *   val fn = SupportFunction.saltAndPepperNoise(0.1) // 10% probablity of noise
+   *   val v = fn(0.5F) // v is 90% likely to be original value, 10% likly to be 0 or 1
+   *
+   *   // To apply to an array:
+   *   val a = (0 to 100).map(_ / 100) // create a ramp from 0 to 1
+   *   val b = a.map(fn)              // add salt and pepper noise to 10% of the values
+   * }}}
    * @param noiseProbability A value between 0 and 1
    * @return A function that may flip a value to 0 or 1 using the giving probability of change
    */

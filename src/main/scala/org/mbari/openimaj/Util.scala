@@ -22,6 +22,8 @@ object Util {
 
   val IMAGE_LENNA = getClass.getResource("/images/Lenna.png")
 
+  val IMAGE_CIRCLES2 = getClass.getResource("/images/circles2.gif")
+
   def read(url: URL): MBFImage = ImageUtilities.readMBF(url)
 
   def read(location: String): MBFImage = {
@@ -72,6 +74,10 @@ object Util {
     frame.setSize(width, height)
     frame
   }
+
+  def namedWindow(name: String, image: FImage): JImageFrame =
+      namedWindow(name, new MBFImage(image, image, image))
+
 
 
 
