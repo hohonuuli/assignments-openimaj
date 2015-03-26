@@ -22,8 +22,16 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Utility to display images in their own resizable windows. Each window is assigned a Name/title.
- * You can reuse a window by using the same name.
+ * You can reuse a window by using the same name. Usage:
+ * <pre>
+ * JavaFX.namedWindow("My Window", 
+ *   new java.net.URL("http://www.mbari.org/staff/brian/images/storage/brian-schlining5_sm.jpg"));
+ * </pre>
  *
+ * If you need a reference to a window that was created:
+ * <pre>
+ *  Optional<ImageStage> myWindow = JavaFX.getNamedWindow("My Window");
+ * </pre>
  * @author Brian Schlining
  * @since 2014-12-05T13:46:00
  */
